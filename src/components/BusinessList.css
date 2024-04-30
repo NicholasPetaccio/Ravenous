@@ -2,9 +2,10 @@
     text-align: center;
     outline: 1px solid black;
     border-radius: 1em;
-    width: fit-content;
+    width: 95%;
     justify-content: center;
     align-content: center;
     margin: 0 auto;
+    background-color: white;
     
 }

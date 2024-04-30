@@ -1,5 +1,6 @@
 import React from "react";
 import BusinessList from "./components/BusinessList";
+import SearchBar from "./components/SearchBar";
 import "./App.css";
 
 const sampleBusinesses = [
@@ -21,6 +22,7 @@ function App() {
   return (
     <div>
       <h1 className="header">Feeling Hungry?</h1>
+      <SearchBar />
       <BusinessList businesses={sampleBusinesses} />
     </div>
   );
