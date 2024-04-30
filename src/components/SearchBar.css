@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.sortBtn:hover{
+    text-shadow: 3px 3px 3px black;
+}
+
 .searchForms{
     text-align: center;
 }
