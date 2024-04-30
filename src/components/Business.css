@@ -1,0 +1,22 @@
+.business{
+    outline: 1px solid black;
+    text-align: center;
+    justify-items: center;
+    width: fit-content;
+    display: inline-block;
+    margin: 3em;
+    padding: 1.5em 3em;
+    border-radius: 1em;
+}
+
+.business-info{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+
+
+.business-list-item{
+    display:block;
+}

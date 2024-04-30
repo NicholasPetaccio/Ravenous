@@ -1,0 +1,10 @@
+.business-list{
+    text-align: center;
+    outline: 1px solid black;
+    border-radius: 1em;
+    width: fit-content;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    
+}
