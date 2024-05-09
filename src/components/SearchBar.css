@@ -1,4 +1,5 @@
-.sortOptions{
+.sortOptions {
+    position: relative;
     border-bottom: 1px solid white;
     margin: 1em auto;
     color: white;
@@ -7,18 +8,52 @@
     text-align: center;
 }
 
-.sortBtn{
+.sortBtn {
     font-size: 2em;
     background: none;
-	color: inherit;
-	border: none;
-	outline: inherit;
+    color: inherit;
+    border: none;
+    outline: inherit;
     cursor: pointer;
+    padding: 10px 20px;
+    margin: 0.5em 1em;
+    position: relative;
 }
 
-.sortBtn:hover{
+.sortBtn:hover {
     text-shadow: 3px 3px 3px black;
 }
+
+.underline {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: white;
+    box-shadow: black 2px 2px;
+    transition: left 0.3s ease, width 0.3s ease;
+    margin: 0.5em;
+}
+
+.sortBtn.active{
+    text-shadow: 3px 2px 2px black;
+    color: chocolate;
+    transition: 0.2s ease;
+}
+
+.sortBtn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: black;
+    transition: left 0.3s ease, width 0.3s ease;
+    text-shadow: 3px 3px 3px black;
+  }
+  
+  .sortBtn:not(.active)::after {
+    width: 0;
+  }
 
 .searchForms{
     text-align: center;
