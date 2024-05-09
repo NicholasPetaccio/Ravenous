@@ -16,70 +16,64 @@
     outline: inherit;
     cursor: pointer;
     padding: 10px 20px;
-    margin: 0.5em 1em;
+    margin: 0.5em; 
     position: relative;
 }
 
-.sortBtn:hover {
+.sortBtn:hover, .sortBtn.active {
     text-shadow: 3px 3px 3px black;
+    color: chocolate;
 }
 
 .underline {
     content: '';
     position: absolute;
     bottom: 0;
+    left: 0;
+    width: 100%;
     height: 2px;
     background-color: white;
-    box-shadow: black 2px 2px;
+    box-shadow: 2px 2px 2px black;
     transition: left 0.3s ease, width 0.3s ease;
-    margin: 0.5em;
+    margin: 0.5em
 }
 
-.sortBtn.active{
-    text-shadow: 3px 2px 2px black;
-    color: chocolate;
-    transition: 0.2s ease;
-}
-
-.sortBtn.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    height: 2px;
-    background-color: black;
-    transition: left 0.3s ease, width 0.3s ease;
-    text-shadow: 3px 3px 3px black;
-  }
-  
-  .sortBtn:not(.active)::after {
-    width: 0;
-  }
-
-.searchForms{
+.searchForms {
     text-align: center;
 }
 
-.searchbars{
-    display:inline-flex;
+.searchbars {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
 }
 
-input{
+input {
     width: 30em;
     height: 3em;
-    margin: 0 4em;
+    margin: 0 2em; 
     text-align: start;
     border-radius: 1em;
-    font-size: 1em
+    font-size: 1em;
 }
 
-.buttonDiv{
+.buttonDiv {
     margin: 1em;
+    text-align: center; 
 }
 
-button{
+.buttonDiv button {
     padding: 1em 1.5em;
     border-radius: 0.5em;
     font-size: 1.5em;
     color: white;
     background-color: chocolate;
+    cursor: pointer;
+    border: none; 
+    outline: none; 
+    transition: background-color 0.3s ease; 
+}
+
+.buttonDiv button:hover {
+    background-color: #7e3700; 
 }

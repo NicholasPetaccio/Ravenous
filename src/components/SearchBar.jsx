@@ -3,6 +3,7 @@ import "./SearchBar.css";
 
 const SearchBar = () => {
   const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
   const [activeSort, setActiveSort] = useState("Best Match");
   const sortRefs = {
     "Best Match": useRef(null),
@@ -12,6 +13,21 @@ const SearchBar = () => {
 
   const handleSortClick = (sortType) => {
     setActiveSort(sortType);
+  };
+
+  const handleSearchChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log(
+      `Searching Yelp with ${name}, in ${location}, by ${activeSort}`
+    );
   };
 
   const activeStyle = {
@@ -25,34 +41,40 @@ const SearchBar = () => {
 
   return (
     <div className="searchForms">
-      <div className="sortOptions">
-        {["Best Match", "Highest Rated", "Most Reviewed"].map((sortType) => (
-          <button
-            ref={sortRefs[sortType]}
-            className={`sortBtn ${activeSort === sortType ? "active" : ""}`}
-            onClick={() => handleSortClick(sortType)}
-            type="button"
-          >
-            {sortType}
-          </button>
-        ))}
-        <div className="underline" style={activeStyle}></div>
-      </div>
-      <div className="searchbars">
-        <form>
+      <form onSubmit={handleSearch}>
+        <div className="sortOptions">
+          {["Best Match", "Highest Rated", "Most Reviewed"].map((sortType) => (
+            <button
+              ref={sortRefs[sortType]}
+              className={`sortBtn ${activeSort === sortType ? "active" : ""}`}
+              onClick={() => handleSortClick(sortType)}
+              type="button"
+            >
+              {sortType}
+            </button>
+          ))}
+          <div className="underline" style={activeStyle}></div>
+        </div>
+        <div className="searchbars">
           <input
             type="text"
             placeholder="Search Business"
             name="search"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-          ></input>
-        </form>
-        <input type="text" placeholder="Where?" name="where"></input>
-      </div>
-      <div className="buttonDiv">
-        <button type="submit">Let's go!</button>
-      </div>
+            onChange={handleSearchChange}
+          />
+          <input
+            type="text"
+            placeholder="Where?"
+            name="location"
+            value={location}
+            onChange={handleLocationChange}
+          />
+        </div>
+        <div className="buttonDiv">
+          <button type="submit">Let's go!</button>
+        </div>
+      </form>
     </div>
   );
 };
